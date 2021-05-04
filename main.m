@@ -42,11 +42,11 @@ figure(1)
 
 %% Define x and y coordinates of U_store random users. 
 %UNIFORM distribution of U,
-%since there is a chance they may lay outside the hexagon region
-% & at least U users need to lay inside the hexagon
+%since there is a chance they may be outside the hexagon region
+% & at least U users need to be inside the hexagon
 global U_store
 U_store=Iter*U; %maximum number of coordinates being stored (if all users
-%actually lay inside the region)
+%actually are inside the region)
 
 % preallocating the size of the matrix
 xqtrial=zeros(Iter,U);
@@ -61,7 +61,7 @@ for i=1:Iter
         %the formula is k=R+(R-(-R))*rand(1,U_store)
 
         yqtrial(i,:)=Cyo+r-(r+r)*rand(1, U);  % U_store random numbers 
-        %in the interval (-r, r) because the extreme heigth of hexagon is r, 
+        %in the interval (-r, r) because the extreme height of hexagon is r, 
         %so k=r+(r-(-r)).*rand(1,U_store)
         xoriginal=xqtrial;
         yoriginal=xqtrial;
@@ -196,7 +196,7 @@ fc=fc_MHz*10^6; %converting carrier frequency to Hz
 Noise=k*T*B*10^(NF/10); %in Watts
 Noise_dB=10*log10(k*T*B)+NF; %in dB
 Noise_dBm=Noise_dB+30; %in dBm.
-%Thermal noise as ­173.9 dBm/Hz (without the NF), which is the amount of 
+%Thermal noise as Â­173.9 dBm/Hz (without the NF), which is the amount of 
 %noise in 1 Hz bandwidth.
 
 %% Models
